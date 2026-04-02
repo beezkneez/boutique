@@ -61,8 +61,8 @@ const CONFIG = {
   BRAND_SUB:            process.env.BRAND_SUB            || "Edmonton",
   BRAND_SITE:           process.env.BRAND_SITE           || "https://demo.kronara.app",
   BRAND_LOGO_URL:       process.env.BRAND_LOGO_URL       || "https://demo.kronara.app/wp-content/uploads/sites/5/2020/08/Logo-Edmonton.png",
-  BRAND_COLOR_PRIMARY:  process.env.BRAND_COLOR_PRIMARY  || "#c47a8a",
-  BRAND_COLOR_ACCENT:   process.env.BRAND_COLOR_ACCENT   || "#c47a8a",
+  BRAND_COLOR_PRIMARY:  process.env.BRAND_COLOR_PRIMARY  || "#b4707e",
+  BRAND_COLOR_ACCENT:   process.env.BRAND_COLOR_ACCENT   || "#b4707e",
   BRAND_COLOR_DARK_BG:  process.env.BRAND_COLOR_DARK_BG  || "#1a0a0e",
   BRAND_DEFAULT_THEME:  process.env.BRAND_DEFAULT_THEME  || "light",
   DEMO_MODE:            process.env.DEMO_MODE === "true",
@@ -1256,7 +1256,7 @@ async function buildPayrollPdf(users, pp, settings, lateGroups) {
       doc.addPage();
       y = 40;
       // Orange header
-      doc.rect(40, y, contentW, 36).fill("#c47a8a");
+      doc.rect(40, y, contentW, 36).fill("#b4707e");
       doc.fillColor("#fff").fontSize(14).font("Helvetica-Bold")
          .text("Late Submissions — Require Payment", 52, y + 10);
       y += 44;
@@ -1317,7 +1317,7 @@ async function buildPayrollPdf(users, pp, settings, lateGroups) {
 
       // Late grand total
       if (y + 28 > doc.page.height - 60) { doc.addPage(); y = 40; }
-      doc.rect(40, y, contentW, 26).fill("#c47a8a");
+      doc.rect(40, y, contentW, 26).fill("#b4707e");
       doc.fillColor("#fff").font("Helvetica-Bold").fontSize(11)
          .text("LATE TOTAL", 44, y + 7, { width: contentW - 110 });
       doc.text("$" + lateGrand.toFixed(2), pageW - 140, y + 7, { width: 95, align: "right" });
@@ -3061,7 +3061,7 @@ api.post("/adminResetPin", async (req, res) => {
 
     const ytButton = ytLink
       ? `<div style="text-align:center;margin:16px 0;">
-          <a href="${ytLink}" style="display:inline-block;background:#c47a8a;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;">▶ Watch Tutorial</a>
+          <a href="${ytLink}" style="display:inline-block;background:#b4707e;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;">▶ Watch Tutorial</a>
          </div>`
       : "";
 
@@ -3112,7 +3112,7 @@ api.post("/massResetPins", async (req, res) => {
 
       const ytButton = youtubeLink
         ? `<div style="text-align:center;margin:16px 0;">
-            <a href="${youtubeLink}" style="display:inline-block;background:#c47a8a;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;">▶ Watch Tutorial</a>
+            <a href="${youtubeLink}" style="display:inline-block;background:#b4707e;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;">▶ Watch Tutorial</a>
            </div>`
         : "";
 
@@ -4347,7 +4347,7 @@ api.post("/respondToFlag", async (req, res) => {
         cc: adminEmails.slice(1).join(",") || undefined,
         subject: `${CONFIG.BRAND_NAME} — Flag Response from ${user.name || user.email}`,
         html: `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
-          <div style="background:#c47a8a;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
+          <div style="background:#b4707e;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
             <h2 style="margin:0;font-size:18px;">🟠 Flag Response Received</h2>
           </div>
           <div style="padding:20px;border:1px solid #e0e0e0;border-top:0;border-radius:0 0 8px 8px;">
@@ -4780,7 +4780,7 @@ async function sendFlagReminders() {
         to: f.user_email,
         subject: `${CONFIG.BRAND_NAME} — Reminder: Flagged Entry Needs Attention`,
         html: `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
-          <div style="background:#c47a8a;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
+          <div style="background:#b4707e;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
             <h2 style="margin:0;font-size:18px;">⏰ Reminder: Flagged Entry</h2>
           </div>
           <div style="padding:20px;border:1px solid #e0e0e0;border-top:0;border-radius:0 0 8px 8px;">
@@ -4872,7 +4872,7 @@ async function rolloverUnresolvedFlags(force = false) {
         to: f.user_email,
         subject: `${CONFIG.BRAND_NAME} — Flagged Entry Rolled to Next Pay Cycle`,
         html: `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
-          <div style="background:#c47a8a;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
+          <div style="background:#b4707e;color:#fff;padding:16px 20px;border-radius:8px 8px 0 0;">
             <h2 style="margin:0;font-size:18px;">🔄 Flagged Entry Rolled Over</h2>
           </div>
           <div style="padding:20px;border:1px solid #e0e0e0;border-top:0;border-radius:0 0 8px 8px;">
@@ -4883,7 +4883,7 @@ async function rolloverUnresolvedFlags(force = false) {
             </div>
             <p>This entry has been <strong>rolled into the next pay cycle</strong> as a late submission. It will appear in the current period's payroll pending review.</p>
             <p><strong>⚠️ Please log in and correct this entry as soon as possible.</strong></p>
-            <p style="margin-top:20px;"><a href="https://${process.env.APP_DOMAIN || 'demo.kronara.app'}" style="display:inline-block;background:#c47a8a;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;">Log In & Correct</a></p>
+            <p style="margin-top:20px;"><a href="https://${process.env.APP_DOMAIN || 'demo.kronara.app'}" style="display:inline-block;background:#b4707e;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;">Log In & Correct</a></p>
           </div>
         </div>`
       }).catch(err => console.error("Rollover email failed:", err));
@@ -6195,14 +6195,14 @@ function buildPayrollEmailHtml(users, pp, settings, lateGroups) {
     }, 0), 0);
     lateHtml = `
     <div style="margin-top:24px;">
-      <div style="background:#c47a8a;color:#fff;padding:11px 16px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:8px;">
+      <div style="background:#b4707e;color:#fff;padding:11px 16px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:8px;">
         <span style="font-size:18px;">⚠️</span>
         <span style="font-weight:700;font-size:15px;">Late Submissions — Require Payment</span>
       </div>
-      <div style="border:1px solid #c47a8a;border-top:0;border-radius:0 0 8px 8px;padding:16px;background:#fffdf7;">
+      <div style="border:1px solid #b4707e;border-top:0;border-radius:0 0 8px 8px;padding:16px;background:#fffdf7;">
         <p style="color:#666;font-size:12px;margin:0 0 14px;">These entries are from prior pay periods and were submitted late. They represent additional amounts owed and are NOT included in the current period totals above.</p>
         ${lateSections}
-        <p style="text-align:right;font-weight:800;font-size:15px;margin:8px 0 0;color:#c47a8a;">Late Total: $${lateGrandTotal.toFixed(2)}</p>
+        <p style="text-align:right;font-weight:800;font-size:15px;margin:8px 0 0;color:#b4707e;">Late Total: $${lateGrandTotal.toFixed(2)}</p>
       </div>
     </div>`;
   }
@@ -6778,7 +6778,7 @@ async function checkUnapprovedPayroll() {
           cc:      admins.slice(1).join(",") || undefined,
           subject: `[${CONFIG.BRAND_NAME}] ${unapproved.length} unapproved timesheet${unapproved.length===1?'':'s'} — pay period ends today`,
           html: `<div style="font-family:Arial,sans-serif;max-width:600px;">
-            <h2 style="background:#c47a8a;color:#fff;padding:14px 18px;border-radius:8px 8px 0 0;margin:0;">⚠️ Unapproved Timesheets — ${CONFIG.BRAND_NAME}</h2>
+            <h2 style="background:#b4707e;color:#fff;padding:14px 18px;border-radius:8px 8px 0 0;margin:0;">⚠️ Unapproved Timesheets — ${CONFIG.BRAND_NAME}</h2>
             <div style="border:1px solid #e0e0e0;border-top:0;padding:18px;">
               <p>Today is the last day of the pay period <strong>${period.start} → ${period.end}</strong>.</p>
               <p>The following <strong>${unapproved.length} staff member${unapproved.length===1?'':'s'}</strong> ${unapproved.length===1?'has':'have'} submitted timesheets that have <strong>not been approved</strong>:</p>
@@ -8579,13 +8579,13 @@ function proposalEmailHtml(p, opts = {}) {
   // Suggested changes diff
   if (opts.suggestedFields && typeof opts.suggestedFields === "object") {
     html += `<div style="background:#fff3e0;border:1px solid #ffe0b2;border-radius:8px;padding:12px 16px;margin:12px 0;">`;
-    html += `<div style="font-weight:700;font-size:13px;margin-bottom:6px;color:#c47a8a;">Suggested Changes:</div>`;
+    html += `<div style="font-weight:700;font-size:13px;margin-bottom:6px;color:#b4707e;">Suggested Changes:</div>`;
     const labels = { start_time: "Time", proposal_date: "Date", class_name: "Class Name", duration: "Duration", location: "Location", room: "Room" };
     for (const [k, v] of Object.entries(opts.suggestedFields)) {
       const origVal = p[k] || "";
       if (String(origVal) !== String(v)) {
         const label = labels[k] || k.charAt(0).toUpperCase() + k.slice(1);
-        html += `<div style="font-size:13px;padding:2px 0;"><strong>${label}:</strong> <span style="text-decoration:line-through;color:#999;">${origVal}</span> → <span style="color:#c47a8a;font-weight:600;">${v}</span></div>`;
+        html += `<div style="font-size:13px;padding:2px 0;"><strong>${label}:</strong> <span style="text-decoration:line-through;color:#999;">${origVal}</span> → <span style="color:#b4707e;font-weight:600;">${v}</span></div>`;
       }
     }
     html += `</div>`;
@@ -8704,7 +8704,7 @@ api.post("/proposalSuggestChange", async (req, res) => {
     sendPush(staffEmail, "Change suggested", `Admin suggested changes to your "${className}"${seriesNote} proposal`, "/?tab=proposals").catch(()=>{});
     sendMail({ to: staffEmail, subject: `${CONFIG.BRAND_NAME} — Changes suggested for "${className}" (${proposal.proposal_date})${seriesNote}`,
       html: proposalEmailHtml(proposal, {
-        headerColor: "#c47a8a",
+        headerColor: "#b4707e",
         title: "Changes Suggested to Your Proposal",
         intro: `Admin has suggested changes to your <strong>${className}</strong>${seriesNote} proposal. Please review and accept or decline.`,
         suggestedFields: suggestedFields || null,
@@ -9688,15 +9688,15 @@ setupDatabase()
                     to: u.email,
                     subject: `${CONFIG.BRAND_NAME} — Urgent: Unclaimed Shift (${shift.shift_date} ${shift.shift_time} @ ${shift.location})`,
                     html: `<div style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;">
-                      <h2 style="color:#c47a8a;">🚨 Urgent: Unclaimed Shift</h2>
+                      <h2 style="color:#b4707e;">🚨 Urgent: Unclaimed Shift</h2>
                       <p><strong>${desc}</strong> on <strong>${shift.shift_date}</strong> needs coverage!</p>
-                      <div style="background:#fff3e0;border-radius:8px;padding:12px 16px;margin:12px 0;border-left:3px solid #c47a8a;">
+                      <div style="background:#fff3e0;border-radius:8px;padding:12px 16px;margin:12px 0;border-left:3px solid #b4707e;">
                         ${shift.class_name ? `<div><strong>Class:</strong> ${shift.class_name}</div>` : ""}
                         <div><strong>Date:</strong> ${shift.shift_date}</div>
                         <div><strong>Time:</strong> ${shift.shift_time}</div>
                         <div><strong>Location:</strong> ${shift.location}</div>
                       </div>
-                      <p style="text-align:center;"><a href="${process.env.BASE_URL || 'https://demo.kronara.app'}?tab=tsps" style="display:inline-block;background:#c47a8a;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a></p>
+                      <p style="text-align:center;"><a href="${process.env.BASE_URL || 'https://demo.kronara.app'}?tab=tsps" style="display:inline-block;background:#b4707e;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a></p>
                       <p style="color:#888;font-size:12px;">You can manage email preferences in your profile settings.</p>
                     </div>`
                   }).catch(e => console.error("TSPS urgent email failed:", e.message));
