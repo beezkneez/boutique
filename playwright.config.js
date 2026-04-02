@@ -11,7 +11,7 @@ module.exports = defineConfig({
   reporter: [["html", { open: "never" }], ["list"]],
 
   use: {
-    baseURL: process.env.TEST_URL || "https://teststudio.demo",
+    baseURL: process.env.TEST_URL || "https://demo.kronara.app",
     screenshot: "only-on-failure",
     trace: "on-first-retry",
     actionTimeout: 10_000,

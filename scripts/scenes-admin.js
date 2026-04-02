@@ -12,7 +12,7 @@ const {
   waitForNarration,
 } = require('./demo-helpers');
 
-const APP_URL = 'https://teststudio.demo';
+const APP_URL = 'https://demo.kronara.app';
 const ADMIN_USER = 'admin';
 const ADMIN_PIN = '1212';
 

@@ -2,7 +2,7 @@
 const { test, expect } = require("@playwright/test");
 const { STAFF_EMAIL, STAFF_PIN, ADMIN_USER, ADMIN_PIN } = require("./helpers");
 
-const BASE = process.env.TEST_URL || "https://teststudio.demo";
+const BASE = process.env.TEST_URL || "https://demo.kronara.app";
 
 // Admin uses username "admin" to log in, but other API endpoints need
 // the actual email address. We resolve it once at the start.

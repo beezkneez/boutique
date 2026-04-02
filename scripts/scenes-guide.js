@@ -17,7 +17,7 @@ const {
   scrollTo,
 } = require('./demo-helpers');
 
-const APP_URL = 'https://teststudio.demo';
+const APP_URL = 'https://demo.kronara.app';
 const STAFF_EMAIL = 'judbeasley@gmail.com';
 const STAFF_PIN = '1212';
 

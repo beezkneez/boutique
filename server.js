@@ -59,8 +59,8 @@ const CONFIG = {
 
   BRAND_NAME:           process.env.BRAND_NAME           || "Test Studio",
   BRAND_SUB:            process.env.BRAND_SUB            || "Edmonton",
-  BRAND_SITE:           process.env.BRAND_SITE           || "https://teststudio.demo",
-  BRAND_LOGO_URL:       process.env.BRAND_LOGO_URL       || "https://teststudio.demo/wp-content/uploads/sites/5/2020/08/Logo-Edmonton.png",
+  BRAND_SITE:           process.env.BRAND_SITE           || "https://demo.kronara.app",
+  BRAND_LOGO_URL:       process.env.BRAND_LOGO_URL       || "https://demo.kronara.app/wp-content/uploads/sites/5/2020/08/Logo-Edmonton.png",
   BRAND_COLOR_PRIMARY:  process.env.BRAND_COLOR_PRIMARY  || "#c47a8a",
   BRAND_COLOR_ACCENT:   process.env.BRAND_COLOR_ACCENT   || "#c47a8a",
   BRAND_COLOR_DARK_BG:  process.env.BRAND_COLOR_DARK_BG  || "#1a0a0e",
@@ -89,7 +89,7 @@ const DEMO_BLOCK_MSG = "This is demo data and cannot be deleted.";
 // ─────────────────────────────────────────
 try {
   if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
-    const vapidSubject = process.env.VAPID_SUBJECT || "mailto:support@teststudio.demo";
+    const vapidSubject = process.env.VAPID_SUBJECT || "mailto:support@demo.kronara.app";
     const subject = vapidSubject.startsWith("mailto:") ? vapidSubject : `mailto:${vapidSubject}`;
     webpush.setVapidDetails(subject, process.env.VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY);
     console.log("Web Push: VAPID configured ✅");
@@ -734,26 +734,26 @@ async function seedDemoData() {
   }
 
   const staff = [
-    { email: "emma@demo.teststudio.com", name: "Emma Whitfield", type: "Employee", pin: "1234", username: "emma" },
-    { email: "sophia@demo.teststudio.com", name: "Sophia Nguyen", type: "Employee", pin: "1234", username: "sophia" },
-    { email: "olivia@demo.teststudio.com", name: "Olivia Hart", type: "Contractor", pin: "1234", username: "olivia" },
-    { email: "isabella@demo.teststudio.com", name: "Isabella Cruz", type: "Employee", pin: "1234", username: "isabella" },
-    { email: "mia@demo.teststudio.com", name: "Mia Tanaka", type: "Contractor", pin: "1234", username: "mia" },
-    { email: "charlotte@demo.teststudio.com", name: "Charlotte Brooks", type: "Employee", pin: "1234", username: "charlotte" },
-    { email: "amelia@demo.teststudio.com", name: "Amelia Foster", type: "Employee", pin: "1234", username: "amelia" },
-    { email: "harper@demo.teststudio.com", name: "Harper Sullivan", type: "Contractor", pin: "1234", username: "harper" },
-    { email: "evelyn@demo.teststudio.com", name: "Evelyn Park", type: "Employee", pin: "1234", username: "evelyn" },
-    { email: "aria@demo.teststudio.com", name: "Aria Delgado", type: "Contractor", pin: "1234", username: "aria" },
-    { email: "luna@demo.teststudio.com", name: "Luna Petrova", type: "Employee", pin: "1234", username: "luna" },
-    { email: "chloe@demo.teststudio.com", name: "Chloe Bennett", type: "Employee", pin: "1234", username: "chloe" },
-    { email: "riley@demo.teststudio.com", name: "Riley Jordan", type: "Contractor", pin: "1234", username: "riley" },
-    { email: "nora@demo.teststudio.com", name: "Nora Kim", type: "Employee", pin: "1234", username: "nora" },
-    { email: "zoey@demo.teststudio.com", name: "Zoey Ramirez", type: "Contractor", pin: "1234", username: "zoey" },
-    { email: "lily@demo.teststudio.com", name: "Lily Chen", type: "Employee", pin: "1234", username: "lily" },
-    { email: "grace@demo.teststudio.com", name: "Grace O'Brien", type: "Employee", pin: "1234", username: "grace" },
-    { email: "violet@demo.teststudio.com", name: "Violet Simmons", type: "Contractor", pin: "1234", username: "violet" },
-    { email: "hazel@demo.teststudio.com", name: "Hazel Dawson", type: "Employee", pin: "1234", username: "hazel" },
-    { email: "demo@demo.teststudio.com", name: "Demo User", type: "Employee", pin: "1212", username: "demo" }
+    { email: "emma@demo.kronara.app", name: "Emma Whitfield", type: "Employee", pin: "1234", username: "emma" },
+    { email: "sophia@demo.kronara.app", name: "Sophia Nguyen", type: "Employee", pin: "1234", username: "sophia" },
+    { email: "olivia@demo.kronara.app", name: "Olivia Hart", type: "Contractor", pin: "1234", username: "olivia" },
+    { email: "isabella@demo.kronara.app", name: "Isabella Cruz", type: "Employee", pin: "1234", username: "isabella" },
+    { email: "mia@demo.kronara.app", name: "Mia Tanaka", type: "Contractor", pin: "1234", username: "mia" },
+    { email: "charlotte@demo.kronara.app", name: "Charlotte Brooks", type: "Employee", pin: "1234", username: "charlotte" },
+    { email: "amelia@demo.kronara.app", name: "Amelia Foster", type: "Employee", pin: "1234", username: "amelia" },
+    { email: "harper@demo.kronara.app", name: "Harper Sullivan", type: "Contractor", pin: "1234", username: "harper" },
+    { email: "evelyn@demo.kronara.app", name: "Evelyn Park", type: "Employee", pin: "1234", username: "evelyn" },
+    { email: "aria@demo.kronara.app", name: "Aria Delgado", type: "Contractor", pin: "1234", username: "aria" },
+    { email: "luna@demo.kronara.app", name: "Luna Petrova", type: "Employee", pin: "1234", username: "luna" },
+    { email: "chloe@demo.kronara.app", name: "Chloe Bennett", type: "Employee", pin: "1234", username: "chloe" },
+    { email: "riley@demo.kronara.app", name: "Riley Jordan", type: "Contractor", pin: "1234", username: "riley" },
+    { email: "nora@demo.kronara.app", name: "Nora Kim", type: "Employee", pin: "1234", username: "nora" },
+    { email: "zoey@demo.kronara.app", name: "Zoey Ramirez", type: "Contractor", pin: "1234", username: "zoey" },
+    { email: "lily@demo.kronara.app", name: "Lily Chen", type: "Employee", pin: "1234", username: "lily" },
+    { email: "grace@demo.kronara.app", name: "Grace O'Brien", type: "Employee", pin: "1234", username: "grace" },
+    { email: "violet@demo.kronara.app", name: "Violet Simmons", type: "Contractor", pin: "1234", username: "violet" },
+    { email: "hazel@demo.kronara.app", name: "Hazel Dawson", type: "Employee", pin: "1234", username: "hazel" },
+    { email: "demo@demo.kronara.app", name: "Demo User", type: "Employee", pin: "1212", username: "demo" }
   ];
   for (const s of staff) {
     await query(
@@ -810,9 +810,9 @@ async function seedDemoData() {
 
   // Seed a couple proposals
   const proposalData = [
-    { email: "emma@demo.teststudio.com", name: "Emma Whitfield", cn: "Morning Flow Yoga", date: demoDate(7), time: "6:00 PM", loc: "Main Studio", room: "Studio B", status: "pending" },
-    { email: "sophia@demo.teststudio.com", name: "Sophia Nguyen", cn: "Barre & Wine Night", date: demoDate(10), time: "7:00 PM", loc: "West Side Studio", room: "Studio A", status: "pending" },
-    { email: "olivia@demo.teststudio.com", name: "Olivia Hart", cn: "Reformer Intensive", date: demoDate(5), time: "10:00 AM", loc: "Midtown Studio", room: "Studio A", status: "approved", archived_at: "NOW()" }
+    { email: "emma@demo.kronara.app", name: "Emma Whitfield", cn: "Morning Flow Yoga", date: demoDate(7), time: "6:00 PM", loc: "Main Studio", room: "Studio B", status: "pending" },
+    { email: "sophia@demo.kronara.app", name: "Sophia Nguyen", cn: "Barre & Wine Night", date: demoDate(10), time: "7:00 PM", loc: "West Side Studio", room: "Studio A", status: "pending" },
+    { email: "olivia@demo.kronara.app", name: "Olivia Hart", cn: "Reformer Intensive", date: demoDate(5), time: "10:00 AM", loc: "Midtown Studio", room: "Studio A", status: "approved", archived_at: "NOW()" }
   ];
   for (const p of proposalData) {
     await query(
@@ -826,7 +826,7 @@ async function seedDemoData() {
   await query(
     `INSERT INTO shift_posts (tenant_id, poster_email, poster_name, location, shift_time, shift_date, class_name, notes, status, is_demo)
      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'open',TRUE)`,
-    [tid, "mia@demo.teststudio.com", "Mia Tanaka", "Main Studio", "5:30 PM", demoDate(3), "Barre Burn", "Need someone to cover — family event!"]
+    [tid, "mia@demo.kronara.app", "Mia Tanaka", "Main Studio", "5:30 PM", demoDate(3), "Barre Burn", "Need someone to cover — family event!"]
   );
 
   console.log("Demo data seeded.");
@@ -983,7 +983,7 @@ async function sendMail(opts) {
       .filter((v,i,a) => a.indexOf(v) === i); // dedupe
 
     const resend = getResend();
-    const from   = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@teststudio.demo>`;
+    const from   = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@demo.kronara.app>`;
 
     // Admin/accountant reports always bypass test mode filtering — send to actual recipients
     if (opts.adminReport) {
@@ -1076,7 +1076,7 @@ async function sendMail(opts) {
 
   // Normal send
   const resend = getResend();
-  const from = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@teststudio.demo>`;
+  const from = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@demo.kronara.app>`;
   await mailRateLimit();
   await sendMailWithRetry(() => resend.emails.send({
     from,
@@ -3054,7 +3054,7 @@ api.post("/adminResetPin", async (req, res) => {
 
     // Send PIN via email
     const userName = tgtUser.rows[0].name || tgtEmail;
-    const appUrl = `https://${process.env.APP_DOMAIN || "teststudio.demo"}`;
+    const appUrl = `https://${process.env.APP_DOMAIN || "demo.kronara.app"}`;
     const settings = await getAdminSettings();
     const ytLink = settings.youtubeLink || "";
 
@@ -3102,7 +3102,7 @@ api.post("/massResetPins", async (req, res) => {
     const tid = await getDefaultTenantId();
     const staffRes = await query(`SELECT * FROM users WHERE tenant_id=$1 AND is_active=TRUE`, [tid]);
     const brand = CONFIG.BRAND_NAME || "Test Studio";
-    const appUrl = `https://${process.env.APP_DOMAIN || "teststudio.demo"}`;
+    const appUrl = `https://${process.env.APP_DOMAIN || "demo.kronara.app"}`;
     let count = 0;
 
     for (const u of staffRes.rows) {
@@ -3604,7 +3604,7 @@ api.post("/debugEmail", async (req, res) => {
 
     // Test Resend API key by hitting their /domains endpoint
     const resendKey = process.env.RESEND_API_KEY || "";
-    const resendFrom = process.env.RESEND_FROM || `(not set — will use: ${CONFIG.BRAND_NAME} <support@teststudio.demo>)`;
+    const resendFrom = process.env.RESEND_FROM || `(not set — will use: ${CONFIG.BRAND_NAME} <support@demo.kronara.app>)`;
     report.env.RESEND_API_KEY = resendKey ? "✅ Set (" + resendKey.length + " chars)" : "⚠️ NOT SET";
     report.env.RESEND_FROM    = resendFrom;
     // Remove old SMTP fields
@@ -3956,7 +3956,7 @@ api.post("/sendReminderEmails", async (req, res) => {
       [tid]
     );
 
-    const appUrl = `https://${process.env.APP_DOMAIN||"teststudio.demo"}`;
+    const appUrl = `https://${process.env.APP_DOMAIN||"demo.kronara.app"}`;
     let count = 0;
     for (const u of staff.rows) {
       const entryCount = submittedMap[u.email] || 0;
@@ -4882,7 +4882,7 @@ async function rolloverUnresolvedFlags(force = false) {
             </div>
             <p>This entry has been <strong>rolled into the next pay cycle</strong> as a late submission. It will appear in the current period's payroll pending review.</p>
             <p><strong>⚠️ Please log in and correct this entry as soon as possible.</strong></p>
-            <p style="margin-top:20px;"><a href="https://${process.env.APP_DOMAIN || 'teststudio.demo'}" style="display:inline-block;background:#c47a8a;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;">Log In & Correct</a></p>
+            <p style="margin-top:20px;"><a href="https://${process.env.APP_DOMAIN || 'demo.kronara.app'}" style="display:inline-block;background:#c47a8a;color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;">Log In & Correct</a></p>
           </div>
         </div>`
       }).catch(err => console.error("Rollover email failed:", err));
@@ -6665,7 +6665,7 @@ async function checkAutoRemindBeforePeriodEnd() {
 
       let count = 0;
       const brand = CONFIG.BRAND_NAME || "Test Studio";
-      const appUrl = `https://${process.env.APP_DOMAIN || "teststudio.demo"}`;
+      const appUrl = `https://${process.env.APP_DOMAIN || "demo.kronara.app"}`;
       for (const u of staff.rows) {
         const entryCount = submittedMap[u.email] || 0;
         const isPartial = entryCount > 0;
@@ -6711,7 +6711,7 @@ async function checkUnapprovedPayroll() {
     if (!period) return;
 
     const tid = await getDefaultTenantId();
-    const appUrl = `https://${process.env.APP_DOMAIN || "teststudio.demo"}`;
+    const appUrl = `https://${process.env.APP_DOMAIN || "demo.kronara.app"}`;
 
     // All active non-admin staff
     const allStaffRes = await query(
@@ -7320,7 +7320,7 @@ api.post("/emailImage", async (req, res) => {
     // All staff can email images to themselves (personal image creator)
 
     const resend = getResend();
-    const from = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@teststudio.demo>`;
+    const from = process.env.RESEND_FROM || `${CONFIG.BRAND_NAME} <support@demo.kronara.app>`;
     const fname = filename || "studio-card.png";
 
     await mailRateLimit();
@@ -8094,7 +8094,7 @@ api.post("/postShift", async (req, res) => {
               <p><strong>${posterName}</strong> posted ${created.length} shift(s):</p>
               ${shiftListHtml}
               <p style="margin-top:16px;text-align:center;">
-                <a href="${process.env.BASE_URL || 'https://teststudio.demo'}?tab=tsps" style="display:inline-block;background:${CONFIG.BRAND_COLOR_PRIMARY};color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a>
+                <a href="${process.env.BASE_URL || 'https://demo.kronara.app'}?tab=tsps" style="display:inline-block;background:${CONFIG.BRAND_COLOR_PRIMARY};color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a>
               </p>
               <p style="color:#888;font-size:12px;">You can manage email preferences in your profile settings.</p>
             </div>`
@@ -8499,7 +8499,7 @@ api.post("/getProposalsDashboard", async (req, res) => {
 });
 
 // ── Proposal email helper ──
-const PROPOSAL_APP_URL = "https://teststudio.demo/";
+const PROPOSAL_APP_URL = "https://demo.kronara.app/";
 
 function proposalGcalUrl(proposal) {
   // Parse start_time like "10:00 AM" or "2:30 PM" into 24h
@@ -9695,7 +9695,7 @@ setupDatabase()
                         <div><strong>Time:</strong> ${shift.shift_time}</div>
                         <div><strong>Location:</strong> ${shift.location}</div>
                       </div>
-                      <p style="text-align:center;"><a href="${process.env.BASE_URL || 'https://teststudio.demo'}?tab=tsps" style="display:inline-block;background:#c47a8a;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a></p>
+                      <p style="text-align:center;"><a href="${process.env.BASE_URL || 'https://demo.kronara.app'}?tab=tsps" style="display:inline-block;background:#c47a8a;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none;">CLAIM SHIFT</a></p>
                       <p style="color:#888;font-size:12px;">You can manage email preferences in your profile settings.</p>
                     </div>`
                   }).catch(e => console.error("TSPS urgent email failed:", e.message));
