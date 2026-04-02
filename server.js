@@ -753,7 +753,8 @@ async function seedDemoData() {
     { email: "grace@demo.kronara.app", name: "Grace O'Brien", type: "Employee", pin: "1234", username: "grace" },
     { email: "violet@demo.kronara.app", name: "Violet Simmons", type: "Contractor", pin: "1234", username: "violet" },
     { email: "hazel@demo.kronara.app", name: "Hazel Dawson", type: "Employee", pin: "1234", username: "hazel" },
-    { email: "demo@demo.kronara.app", name: "Demo User", type: "Employee", pin: "1212", username: "demo" }
+    { email: "demo@demo.kronara.app", name: "Demo User", type: "Employee", pin: "1212", username: "demo" },
+    { email: "admin@demo.kronara.app", name: "Studio Admin", type: "Admin", pin: "1212", username: "admin" }
   ];
   for (const s of staff) {
     await query(
